@@ -14,19 +14,24 @@ class the_gui(QWidget):
 
         layout = QGridLayout
         screen_size = QDesktopWidget().screenGeometry(0)
-        self.showMaximized()
+        #self.showMaximized()
 
         side_margin = 100
         top_margin = 200
 
         txt = "This is the RadioMe heart rate and stress recorder, push start to begin recording. <br> \
         Once recording has been started keep this window open. Stop recording safely with the stop button. <br> \
-        You can leave the computer on and the window open to automatically record everyday once the start button has been pushed until the stop button is used."
+        You can leave the computer on and the window open to automatically record everyday once the start button <br>has been pushed until the stop button is used."
         self.description_lbl = QLabel(self)
         self.description_lbl.setText(txt)
+        self.description_lbl.setFont(QFont("Arial", 20, QFont.Bold))
         self.description_lbl.move(side_margin, top_margin)
 
         stress_txt = "Stress: not recording"
+        self.stress_lbl = QLabel(self)
+        self.stress_lbl.setText(stress_txt)
+        self.stress_lbl.setFont(QFont("Arial", 20, QFont.Bold))
+        self.stress_lbl.move(side_margin, 400)
 
         self.start_button = QPushButton("Start", self)
         self.start_button.setFont(QFont("Arial", 38, QFont.Bold))
@@ -59,6 +64,7 @@ def main():
     app = QApplication(sys.argv)
     gui = Controller()
     gui.show_the_gui()
+    sys.exit(app.exec_())
 
 if __name__ == '__main__':
     main()
