@@ -44,10 +44,21 @@ class the_gui(QWidget):
         #Starts watch recording
         subprocess.call('start python LogSocketHRData.py', shell=True)
 
+class Controller():
+
+
+    def __init__(self):
+        super(Controller, self).__init__()
+
+    def show_the_gui(self):
+        self.the_gui = the_gui()
+        self.the_gui.showMaximized()
+
 def main():
 
     app = QApplication(sys.argv)
-    gui = the_gui()
+    gui = Controller()
+    gui.show_the_gui()
 
 if __name__ == '__main__':
     main()
