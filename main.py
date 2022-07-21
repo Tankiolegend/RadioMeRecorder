@@ -35,7 +35,7 @@ class the_gui(QWidget):
 
         self.start_button = QPushButton("Start", self)
         self.start_button.setFont(QFont("Arial", 38, QFont.Bold))
-        self.start_button.move(int(screen_size.width() - side_margin - self.start_button.width()), int(screen_size.height() - top_margin - self.start_button.height()))
+        self.start_button.move(int(side_margin + self.start_button.width()), int(screen_size.height() - top_margin - self.start_button.height()))
         self.start_button.setStyleSheet("background-color: blue; font-color: black;") #  width: " + str(2*side_margin) + ";")
         self.start_button.clicked.connect(self.start_recording)
 
