@@ -1,0 +1,11 @@
+**/events
+**/plots
+**/dist
+**/data
+**/build
+**/pychache
+*.json
+*.pickle
+*.pyc
+*.pyc
+**/dataold
